@@ -1,6 +1,6 @@
 {
   "name": "mfe_wishlist",
-  "url": "http://localhost:9001",
+  "url": "http://localhost:9003",
   "modules": [
     "./Home",
     "./Sample"

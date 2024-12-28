@@ -1,6 +1,6 @@
-# mfe-starter-react
+# mfe-wishlist-react
 
-The is a react mfe starter app
+The is a react mfe wishlist app
 
 
 ## Installation

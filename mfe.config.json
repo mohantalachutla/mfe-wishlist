@@ -1,14 +1,17 @@
 {
-  "name": "mfe_starter",
+  "name": "mfe_wishlist",
   "url": "http://localhost:9001",
-  "modules": ["./Home", "./Sample"],
+  "modules": [
+    "./Home",
+    "./Sample"
+  ],
   "events": {
     "mfe": {
-      "MFE_STARTER_HOST_READY": "MFE_STARTER_HOST_READY",
-      "MFE_STARTER_HOST_DONE": "MFE_STARTER_HOST_DONE"
+      "MFE_WISHLIST_HOST_READY": "MFE_WISHLIST_HOST_READY",
+      "MFE_WISHLIST_HOST_DONE": "MFE_WISHLIST_HOST_DONE"
     },
     "host": {
-      "HOST_MFE_STARTER_ACKNOWLEDGE": "HOST_MFE_STARTER_ACKNOWLEDGE"
+      "HOST_MFE_WISHLIST_ACKNOWLEDGE": "HOST_MFE_WISHLIST_ACKNOWLEDGE"
     }
   }
 }

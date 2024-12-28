@@ -1,16 +1,16 @@
 {
-  "name": "@mohantalachutla/mfe_starter",
+  "name": "@mohantalachutla/mfe_wishlist",
   "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Mohan Talachutla"
   },
-  "description": "A react mfe starter app",
-  "homepage": "https://github.com/mohantalachutla/mfe-starter",
+  "description": "A react mfe wishlist app",
+  "homepage": "https://github.com/mohantalachutla/mfe-wishlist",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohantalachutla/mfe-starter.git"
+    "url": "https://github.com/mohantalachutla/mfe-wishlist.git"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -3,11 +3,12 @@ import loaderReducer from './loader';
 import modalReducer from './modal';
 import authReducer from './auth';
 import wishlistReducer from './wishlist';
+import { withProjectName } from '../utils/config';
 
 export default {
   hello: helloReducer,
-  loader: loaderReducer,
-  modal: modalReducer,
+  [withProjectName('loader')]: loaderReducer,
+  [withProjectName('modal')]: modalReducer,
   auth: authReducer,
   wishlist: wishlistReducer,
 };

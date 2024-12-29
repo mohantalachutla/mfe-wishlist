@@ -30,3 +30,11 @@ export const addToCart = ({ items, archivedItems } = {}) => {
 export const removeFromWishlist = ({ wishlistId, productId } = {}) => {
   return httpClient.delete(`/api/wishlist/${wishlistId}/${productId}`);
 };
+
+export const createNewWishlist = ({ name, description, items } = {}) => {
+  return httpClient.post('/api/wishlist', {
+    name,
+    description,
+    items,
+  });
+};

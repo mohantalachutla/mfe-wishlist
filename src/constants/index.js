@@ -6,6 +6,7 @@ export const BANNER_TYPES = {
 };
 export const MODAL_TYPES = {
   DEFAULT: 'default',
+  NEW_WISHLIST: 'new-wishlist',
 };
 
 export const ALERT_TYPES = {

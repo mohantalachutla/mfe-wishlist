@@ -24,8 +24,16 @@ export const addToCartAction = createAction(
     payload,
   })
 );
+
 export const removeFromWishlistAction = createAction(
   'wishlist/removeFromWishlist/request',
+  (payload) => ({
+    payload,
+  })
+);
+
+export const createNewWishlistAction = createAction(
+  'wishlist/createNewWishlistAction/request',
   (payload) => ({
     payload,
   })

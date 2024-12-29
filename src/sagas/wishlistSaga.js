@@ -5,17 +5,31 @@ import {
   orderProducts,
   addToCart,
   removeFromWishlist,
+  createNewWishlist,
 } from '../api';
 import { loadingOff, loadingOn } from '../reducers/loader';
 import { wishlistSuccess, wishlistFailure } from '../reducers/wishlist';
 import { showAlert } from '../reducers/modal';
 import {
   addToCartAction,
+  createNewWishlistAction,
   fetchWishlistAction,
   orderProductAction,
   removeFromWishlistAction,
 } from '../actions';
 import { ALERT_TYPES } from '../constants';
+
+const createWishlistSagaHandler = function* ({ payload }) {
+  yield put(loadingOn());
+  try {
+    yield call(createNewWishlist, payload);
+    yield fetchWishlistSagaHandler();
+  } catch (error) {
+    yield put(wishlistFailure());
+    yield put(showAlert({ type: ALERT_TYPES.ERROR, message: error.message }));
+  }
+  yield put(loadingOff());
+};
 
 const fetchWishlistSagaHandler = function* ({ payload }) {
   yield put(loadingOn());
@@ -107,6 +121,7 @@ const removeFromWishlistSagaHandler = function* ({
 };
 
 const wishlistSaga = function* () {
+  yield takeLatest(createNewWishlistAction.type, createWishlistSagaHandler);
   yield takeLatest(fetchWishlistAction.type, fetchWishlistSagaHandler);
   yield takeLatest(orderProductAction.type, orderProductsSagaHandler);
   yield takeLatest(addToCartAction.type, addToCartSagaHandler);

@@ -26,7 +26,7 @@ export function Product({
       key={_id}
       style={{ width: '100%' }}
     >
-      <Card className="relative max-w-sm md:w-72" imgAlt={name} imgSrc={image}>
+      <Card className="relative w-full" imgAlt={name} imgSrc={image}>
         <div className="w-full flex flex-col justify-between gap-4">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {name}

@@ -5,6 +5,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import PageNotFound from './components/common/PageNotFound';
 import Text from './components/base/Text';
 import Home from './pages/Home';
+import Product from './pages/Product';
 import useAuthentic from 'hooks/useAuthentic';
 import { useDispatch } from 'react-redux';
 import { getToken, getUser } from './utils/auth';
@@ -31,6 +32,11 @@ const AppRoutes = (props) => {
     <Switch>
       {/* protected routes */}
       <PrivateRoute path="/" exact render={() => <Home {...props} />} />
+      <PrivateRoute
+        path="/:wishlistId"
+        exact
+        render={() => <Product {...props} />}
+      />
       {/* public routes */}
       <Route path="*" render={() => <PageNotFound {...props} />} />
     </Switch>

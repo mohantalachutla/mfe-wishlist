@@ -1,3 +1,3 @@
-import { HiShoppingCart } from 'react-icons/hi';
+import { HiShoppingCart, HiHeart } from 'react-icons/hi';
 
-export { HiShoppingCart as ShoppingCartIcon };
+export { HiShoppingCart as ShoppingCartIcon, HiHeart as HeartIcon };

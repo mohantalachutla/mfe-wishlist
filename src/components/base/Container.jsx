@@ -1,23 +1,30 @@
 const Container = ({
   children,
+  className = '',
   size,
   mxAuto = true,
-  px = '4',
   flex = 'col',
-  bg = 'inherit',
+  bgColor = 'inherit',
+  fluid = false,
+  ...props
 }) => {
-  const classes = [
+  let classes = [
     'relative',
     `${size ? size + ':' : ''}container`,
-    'min-h-32',
-    'min-w-32',
     'text-center',
   ];
   flex && classes.push(`flex flex-${flex} flex-wrap justify-around gap-4`);
+  classes = fluid
+    ? classes.concat(['w-full'])
+    : classes.concat(['min-h-32', 'min-w-32']);
   mxAuto && classes.push('mx-auto');
-  classes.push('px-' + px);
-  bg && classes.push('bg-' + bg);
-  return <div className={classes.join(' ')}>{children}</div>;
+  classes.push('px-4');
+  bgColor && classes.push('bg-' + bgColor);
+  return (
+    <div className={classes.join(' ') + className} {...props}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;
